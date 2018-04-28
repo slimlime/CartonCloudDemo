@@ -1,0 +1,22 @@
+.header {
+  padding-bottom: .75rem;
+  border-bottom: .05rem solid #e5e5e5;
+  margin-bottom: 2rem;
+  width:100%;
+}
+
+.navbar {
+  padding:1em 0 0 0;
+}
+
+.text-muted {
+    color: #868e96!important;
+}
+
+section {
+  width:100%;
+}
+
+.delivery-options a {
+  margin-left:.5rem;
+}
