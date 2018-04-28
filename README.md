@@ -1,4 +1,12 @@
 # CartonCloudDemo
+
+## Notes
+The react app in this repository was generated using [create-react-app](https://github.com/facebook/create-react-app).  Due the the complexities in ejecting and reconfiguring an app generated in this way, the api calls are being made with full pathnames and CORS / OPTIONS requests have been enabled in the PHP API.  This is to allow react fetch preflight and cross-domain requests (:3000 to :8000).  In a production setting, native webpack configuration is a much better solution and would avoid these issues.
+
+#### Improvements that could be made
+* Inline form validation ([like this example](https://learnetto.com/blog/how-to-do-simple-form-validation-in-reactjs)).  Currently app only validates after a submit attempt.  This could be improved to validate as the user inputs.
+* Consolidate Create and Update into one component.
+
 ### Requirements
 [PHP 5.4 or later](http://php.net/manual/en/install.php)
 
@@ -16,7 +24,7 @@ Visit [http://localhost:8000/](http://localhost:8000/) to confirm it's running.
 In a new tab or window
 ```
 cd cartoncloud
-npm run build or yarn build
+npm install or yarn install
 npm start or yarn start
 
 ```
