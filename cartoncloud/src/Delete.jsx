@@ -6,23 +6,25 @@ export default class Update extends React.Component {
     super();
 
     this.state = {
-      delivery: [],
+      deliveryId: '',
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     const deliveryId = this.props.location.pathname.split('/')[2];
-    fetch(`http://localhost:8000/api/deliveries.php?id=${deliveryId}`)
-      .then(results => results.json())
-      .then(data => this.setState({ delivery: data }));
+    this.setState({ deliveryId });
+  }
+
+  componentDidMount() {
+
   }
 
   handleSubmit(event) {
     event.preventDefault();
 
-    const deliveryId = this.props.location.pathname.split('/')[2];
+    const { deliveryId } = this.state;
 
     fetch(`http://localhost:8000/api/deliveries.php?id=${deliveryId}`, {
       method: 'DELETE',
@@ -43,8 +45,7 @@ export default class Update extends React.Component {
     return (
       <section id="create">
         <h1>Delete Delivery</h1>
-        <p>Are you sure you want to delete this delivery?</p>
-        <pre>{JSON.stringify(this.state.delivery, null, 2) }</pre>
+        <p>Are you sure you want to delete this delivery (<strong>#{this.state.deliveryId}</strong>)?</p>
         <Form onSubmit={this.handleSubmit}>
           <Button color="danger">Delete</Button>
         </Form>

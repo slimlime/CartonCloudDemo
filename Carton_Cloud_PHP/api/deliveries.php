@@ -129,6 +129,9 @@ switch ($_SERVER['REQUEST_METHOD']) {
         header("Access-Control-Allow-Origin: *");
         header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
         header('HTTP/1.0 200 OK');
+        break;
+    default:
+        header('HTTP/1.0 405 Method Not Allowed');
 
         exit;
 }
