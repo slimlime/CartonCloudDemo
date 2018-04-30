@@ -34,11 +34,9 @@ export default class Update extends React.Component {
         fetch('http://localhost:8000/api/drivers.php')
           .then(results => results.json())
           .then((driverData) => {
-            const drivers = Object.keys(driverData).map((key, driver) => {
-              return (
-                <option key={key} value={key}>{driverData[key].name}</option>
-              );
-            });
+            const drivers = Object.keys(driverData).map(key => (
+              <option key={key} value={key}>{driverData[key].name}</option>
+            ));
             this.setState({ drivers });
           });
       });
@@ -58,8 +56,6 @@ export default class Update extends React.Component {
 
     const formData = this.state.delivery;
     const deliveryId = this.props.location.pathname.split('/')[2];
-
-    console.log(formData);
 
     fetch(`http://localhost:8000/api/deliveries.php?id=${deliveryId}`, {
       method: 'PUT',

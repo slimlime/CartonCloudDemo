@@ -5,8 +5,8 @@ import Deliveries from './Deliveries';
 import Create from './Create';
 import Update from './Update';
 import Delete from './Delete';
-import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 class App extends React.Component {
   constructor(props) {
